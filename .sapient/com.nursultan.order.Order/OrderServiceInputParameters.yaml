@@ -1,0 +1,2022 @@
+---
+modelFingerprint: "344950F2CEAC511F6F8B051236F37F80"
+targetClass:
+  fullClassName: "com.nursultan.order.Order.OrderService"
+  annotations:
+  - fullClassName: "org.springframework.stereotype.Service"
+    values: {}
+methods:
+- method:
+    name: "getOrders"
+    signature: "getOrders(org.springframework.data.domain.Pageable) : org.springframework.data.domain.Page<com.nursultan.order.Order.Order>"
+    sourceCodeSignature: "Page<Order> getOrders(Pageable pageable)"
+    returnType: "org.springframework.data.domain.Page"
+    genericReturnType: "com.nursultan.order.Order.Order"
+    parameters:
+    - name: "pageable"
+      value:
+        sapientType: "UNKNOWN"
+        valueType: "org.springframework.data.domain.Pageable"
+    instructionFingerprint: "77D644497EF33E3CFC5EB6D813C2CA25"
+  paths:
+  - pathId: "path1"
+    testPathName: "getOrdersTest"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "C12FD290672FFD06CFB8925BCB7635F0"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "48960E82C558E4CC553E50FA85798DDE"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "pageable"
+      modelFingerprint: "558B8E2C4862AE944135CD1518975B14"
+      valueUuid: "pageable"
+    - type: "FIELD"
+      name: "orderRepository"
+      modelFingerprint: "8A935B751E4BCB4D3EEC616A672F3C65"
+      valueUuid: "orderRepository"
+      methodExercised:
+        expression: "findAll(pageable:pageable):page"
+        signature: "findAll(Pageable): Page"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "5AAE16BC0306A20525041844E5AC5B04"
+      valueUuid: "page"
+    uuid: "be805aad-94e7-3112-b786-81307cf8e8b4"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Pageable"
+      uuid: "pageable"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderRepository"
+      uuid: "orderRepository"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Pageable"
+      uuid: "pageable"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page"
+    calledSomeStaticInternalMethod: false
+- method:
+    name: "createOrder"
+    signature: "createOrder(java.lang.String,java.lang.String,java.lang.String,java.lang.String)\
+      \ : com.nursultan.order.Order.Order"
+    sourceCodeSignature: "Order createOrder(String originLat, String originLng, String\
+      \ destLat, String destLng)"
+    returnType: "com.nursultan.order.Order.Order"
+    throwsExceptions:
+    - "java.io.IOException"
+    parameters:
+    - name: "originLat"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "originLng"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "destLat"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "destLng"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    instructionFingerprint: "DDEFD0D62DB7F2B3480EA29A0A705D37"
+  paths:
+  - pathId: "path1"
+    testPathName: "createOrderTest"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "D6AD6326A8A821B9146DF25B1AEFF129"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "48960E82C558E4CC553E50FA85798DDE"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "originLat"
+      modelFingerprint: "CDA3F471698FED84147DEB6275511F57"
+      valueUuid: "originLat"
+    - type: "INPUT"
+      name: "originLng"
+      modelFingerprint: "9C4EBC184AE694365F441C81A7DC42B5"
+      valueUuid: "originLng"
+    - type: "INPUT"
+      name: "destLat"
+      modelFingerprint: "F7E02DA664E77F95C25283FDB67EA1D6"
+      valueUuid: "destLat"
+    - type: "INPUT"
+      name: "destLng"
+      modelFingerprint: "6F7D052E5CC8F7B555A4BB1497632A6F"
+      valueUuid: "destLng"
+    - type: "INTERNAL"
+      name: "internalMethod"
+      modelFingerprint: "E5DD84A74E25AFE652F10E3F7809711D"
+      methodExercised:
+        expression: "calculate(originLat:originLat,originLng:originLng,destLat:destLat,destLng:destLng):string5"
+        signature: "calculate(String,String,String,String): String throws java.io.IOException"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "LOCAL_VARIABLE"
+      name: "google_json"
+      modelFingerprint: "EC52DE9DF3FFC92CFA5045BC164A3D51"
+      valueUuid: "jSONObject"
+      methodExercised:
+        expression: "getJSONArray(arg0:uniqueUuid1):jSONArray"
+        signature: "getJSONArray(String): JSONArray throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "306F77FA415703A5C35FDFA5431A925B"
+      valueUuid: "jSONArray"
+      methodExercised:
+        expression: "getJSONObject(arg0:uniqueUuid2):jSONObject2"
+        signature: "getJSONObject(int): JSONObject throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "C24C0CB04DE66549C4FC4B7F363B6BFD"
+      valueUuid: "jSONObject2"
+      methodExercised:
+        expression: "getJSONArray(arg0:uniqueUuid3):jSONArray2"
+        signature: "getJSONArray(String): JSONArray throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "3317ECABA8254B056551FCB682D48D8B"
+      valueUuid: "jSONArray2"
+      methodExercised:
+        expression: "getJSONObject(arg0:uniqueUuid4):jSONObject3"
+        signature: "getJSONObject(int): JSONObject throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "25A5E79D39EAA42ECA4B6674F8774C7F"
+      valueUuid: "jSONObject3"
+      methodExercised:
+        expression: "getJSONObject(arg0:uniqueUuid5):jSONObject4"
+        signature: "getJSONObject(String): JSONObject throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "C2CF04692A2A028A197629273898D989"
+      valueUuid: "jSONObject4"
+      methodExercised:
+        expression: "getInt(arg0:uniqueUuid6):int1"
+        signature: "getInt(String): int throws org.json.JSONException"
+        throwsExceptions:
+        - "org.json.JSONException"
+    - type: "FIELD"
+      name: "orderRepository"
+      modelFingerprint: "CD13F632CE3065107116CB9468136151"
+      valueUuid: "orderRepository"
+      methodExercised:
+        expression: "save(entity:order):object"
+        signature: "save(Order): Object"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "FA438B4C976DD68CD63674C3AD65B913"
+      valueUuid: "object"
+    uuid: "6a0d0a38-d236-38a9-a752-74344da724bb"
+    disabled: true
+    failureReason:
+      reason: "METHOD_CALL_INSTRUCTION_CONSTRUCTION_FAILURE"
+      source: "JSONObject google_json = new JSONObject(google_result);"
+      lineNumber: 47
+      details: "No constructor found to create an object without any exception for\
+        \ class org.json.JSONObject"
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: true
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originLat1"
+      valueType: "java.lang.String"
+      uuid: "originLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originLng1"
+      valueType: "java.lang.String"
+      uuid: "originLng"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destLat1"
+      valueType: "java.lang.String"
+      uuid: "destLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destLng1"
+      valueType: "java.lang.String"
+      uuid: "destLng"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "return_of_calculate1"
+      valueType: "java.lang.String"
+      uuid: "string5"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originLat1"
+      valueType: "java.lang.String"
+      uuid: "originLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originLng1"
+      valueType: "java.lang.String"
+      uuid: "originLng"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destLat1"
+      valueType: "java.lang.String"
+      uuid: "destLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destLng1"
+      valueType: "java.lang.String"
+      uuid: "destLng"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "org.json.JSONObject"
+        parameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "return_of_calculate1"
+            valueType: "java.lang.String"
+            uuid: "string5"
+        privateConstructor: false
+        thrownExceptions:
+        - "org.json.JSONException"
+        createdByTargetCode: true
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONArray"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "org.json.JSONObject"
+            parameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "return_of_calculate1"
+                valueType: "java.lang.String"
+                uuid: "string5"
+            privateConstructor: false
+            thrownExceptions:
+            - "org.json.JSONException"
+            createdByTargetCode: true
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject"
+          fixed: true
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "rows"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONArray"
+      valueType: "org.json.JSONArray"
+      uuid: "jSONArray"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "rows"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid1"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONArray"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "org.json.JSONObject"
+            parameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "return_of_calculate1"
+                valueType: "java.lang.String"
+                uuid: "string5"
+            privateConstructor: false
+            thrownExceptions:
+            - "org.json.JSONException"
+            createdByTargetCode: true
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject"
+          fixed: true
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "rows"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONArray"
+      valueType: "org.json.JSONArray"
+      uuid: "jSONArray"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONArray"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "org.json.JSONObject"
+                parameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_calculate1"
+                    valueType: "java.lang.String"
+                    uuid: "string5"
+                privateConstructor: false
+                thrownExceptions:
+                - "org.json.JSONException"
+                createdByTargetCode: true
+              valueType: "org.json.JSONObject"
+              uuid: "jSONObject"
+              fixed: true
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "rows"
+                valueType: "java.lang.String"
+                fixed: true
+            methodName: "getJSONArray"
+          valueType: "org.json.JSONArray"
+          uuid: "jSONArray"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "uniqueUuid2"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONArray"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "org.json.JSONObject"
+                parameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "return_of_calculate1"
+                    valueType: "java.lang.String"
+                    uuid: "string5"
+                privateConstructor: false
+                thrownExceptions:
+                - "org.json.JSONException"
+                createdByTargetCode: true
+              valueType: "org.json.JSONObject"
+              uuid: "jSONObject"
+              fixed: true
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "rows"
+                valueType: "java.lang.String"
+                fixed: true
+            methodName: "getJSONArray"
+          valueType: "org.json.JSONArray"
+          uuid: "jSONArray"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject2"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONArray"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONObject"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONArray"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<new>
+                    target: "org.json.JSONObject"
+                    parameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: "return_of_calculate1"
+                        valueType: "java.lang.String"
+                        uuid: "string5"
+                    privateConstructor: false
+                    thrownExceptions:
+                    - "org.json.JSONException"
+                    createdByTargetCode: true
+                  valueType: "org.json.JSONObject"
+                  uuid: "jSONObject"
+                  fixed: true
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "rows"
+                    valueType: "java.lang.String"
+                    fixed: true
+                methodName: "getJSONArray"
+              valueType: "org.json.JSONArray"
+              uuid: "jSONArray"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                fixed: true
+            methodName: "getJSONObject"
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject2"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "elements"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONArray"
+      valueType: "org.json.JSONArray"
+      uuid: "jSONArray2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "elements"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONArray"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONObject"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONArray"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<new>
+                    target: "org.json.JSONObject"
+                    parameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: "return_of_calculate1"
+                        valueType: "java.lang.String"
+                        uuid: "string5"
+                    privateConstructor: false
+                    thrownExceptions:
+                    - "org.json.JSONException"
+                    createdByTargetCode: true
+                  valueType: "org.json.JSONObject"
+                  uuid: "jSONObject"
+                  fixed: true
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "rows"
+                    valueType: "java.lang.String"
+                    fixed: true
+                methodName: "getJSONArray"
+              valueType: "org.json.JSONArray"
+              uuid: "jSONArray"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                fixed: true
+            methodName: "getJSONObject"
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject2"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "elements"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONArray"
+      valueType: "org.json.JSONArray"
+      uuid: "jSONArray2"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONArray"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONObject"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<method_return_from_value>
+                    target: "org.json.JSONArray"
+                    localVariableValue:
+                      sapientType: "OBJECT"
+                      content: !<new>
+                        target: "org.json.JSONObject"
+                        parameters:
+                        - name: "arg0"
+                          value:
+                            sapientType: "BASIC"
+                            content: !<regular>
+                              value: "return_of_calculate1"
+                            valueType: "java.lang.String"
+                            uuid: "string5"
+                        privateConstructor: false
+                        thrownExceptions:
+                        - "org.json.JSONException"
+                        createdByTargetCode: true
+                      valueType: "org.json.JSONObject"
+                      uuid: "jSONObject"
+                      fixed: true
+                    methodParameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: "rows"
+                        valueType: "java.lang.String"
+                        fixed: true
+                    methodName: "getJSONArray"
+                  valueType: "org.json.JSONArray"
+                  uuid: "jSONArray"
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: 0
+                    valueType: "int"
+                    fixed: true
+                methodName: "getJSONObject"
+              valueType: "org.json.JSONObject"
+              uuid: "jSONObject2"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "elements"
+                valueType: "java.lang.String"
+                fixed: true
+            methodName: "getJSONArray"
+          valueType: "org.json.JSONArray"
+          uuid: "jSONArray2"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "int"
+      uuid: "uniqueUuid4"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONArray"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONObject"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<method_return_from_value>
+                    target: "org.json.JSONArray"
+                    localVariableValue:
+                      sapientType: "OBJECT"
+                      content: !<new>
+                        target: "org.json.JSONObject"
+                        parameters:
+                        - name: "arg0"
+                          value:
+                            sapientType: "BASIC"
+                            content: !<regular>
+                              value: "return_of_calculate1"
+                            valueType: "java.lang.String"
+                            uuid: "string5"
+                        privateConstructor: false
+                        thrownExceptions:
+                        - "org.json.JSONException"
+                        createdByTargetCode: true
+                      valueType: "org.json.JSONObject"
+                      uuid: "jSONObject"
+                      fixed: true
+                    methodParameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: "rows"
+                        valueType: "java.lang.String"
+                        fixed: true
+                    methodName: "getJSONArray"
+                  valueType: "org.json.JSONArray"
+                  uuid: "jSONArray"
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: 0
+                    valueType: "int"
+                    fixed: true
+                methodName: "getJSONObject"
+              valueType: "org.json.JSONObject"
+              uuid: "jSONObject2"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "elements"
+                valueType: "java.lang.String"
+                fixed: true
+            methodName: "getJSONArray"
+          valueType: "org.json.JSONArray"
+          uuid: "jSONArray2"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 0
+            valueType: "int"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject3"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONObject"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONArray"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<method_return_from_value>
+                    target: "org.json.JSONObject"
+                    localVariableValue:
+                      sapientType: "OBJECT"
+                      content: !<method_return_from_value>
+                        target: "org.json.JSONArray"
+                        localVariableValue:
+                          sapientType: "OBJECT"
+                          content: !<new>
+                            target: "org.json.JSONObject"
+                            parameters:
+                            - name: "arg0"
+                              value:
+                                sapientType: "BASIC"
+                                content: !<regular>
+                                  value: "return_of_calculate1"
+                                valueType: "java.lang.String"
+                                uuid: "string5"
+                            privateConstructor: false
+                            thrownExceptions:
+                            - "org.json.JSONException"
+                            createdByTargetCode: true
+                          valueType: "org.json.JSONObject"
+                          uuid: "jSONObject"
+                          fixed: true
+                        methodParameters:
+                        - name: "arg0"
+                          value:
+                            sapientType: "BASIC"
+                            content: !<regular>
+                              value: "rows"
+                            valueType: "java.lang.String"
+                            fixed: true
+                        methodName: "getJSONArray"
+                      valueType: "org.json.JSONArray"
+                      uuid: "jSONArray"
+                    methodParameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: 0
+                        valueType: "int"
+                        fixed: true
+                    methodName: "getJSONObject"
+                  valueType: "org.json.JSONObject"
+                  uuid: "jSONObject2"
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "elements"
+                    valueType: "java.lang.String"
+                    fixed: true
+                methodName: "getJSONArray"
+              valueType: "org.json.JSONArray"
+              uuid: "jSONArray2"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                fixed: true
+            methodName: "getJSONObject"
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject3"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "distance"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "distance"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid5"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.json.JSONObject"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "org.json.JSONObject"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "org.json.JSONArray"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<method_return_from_value>
+                    target: "org.json.JSONObject"
+                    localVariableValue:
+                      sapientType: "OBJECT"
+                      content: !<method_return_from_value>
+                        target: "org.json.JSONArray"
+                        localVariableValue:
+                          sapientType: "OBJECT"
+                          content: !<new>
+                            target: "org.json.JSONObject"
+                            parameters:
+                            - name: "arg0"
+                              value:
+                                sapientType: "BASIC"
+                                content: !<regular>
+                                  value: "return_of_calculate1"
+                                valueType: "java.lang.String"
+                                uuid: "string5"
+                            privateConstructor: false
+                            thrownExceptions:
+                            - "org.json.JSONException"
+                            createdByTargetCode: true
+                          valueType: "org.json.JSONObject"
+                          uuid: "jSONObject"
+                          fixed: true
+                        methodParameters:
+                        - name: "arg0"
+                          value:
+                            sapientType: "BASIC"
+                            content: !<regular>
+                              value: "rows"
+                            valueType: "java.lang.String"
+                            fixed: true
+                        methodName: "getJSONArray"
+                      valueType: "org.json.JSONArray"
+                      uuid: "jSONArray"
+                    methodParameters:
+                    - name: "arg0"
+                      value:
+                        sapientType: "BASIC"
+                        content: !<regular>
+                          value: 0
+                        valueType: "int"
+                        fixed: true
+                    methodName: "getJSONObject"
+                  valueType: "org.json.JSONObject"
+                  uuid: "jSONObject2"
+                methodParameters:
+                - name: "arg0"
+                  value:
+                    sapientType: "BASIC"
+                    content: !<regular>
+                      value: "elements"
+                    valueType: "java.lang.String"
+                    fixed: true
+                methodName: "getJSONArray"
+              valueType: "org.json.JSONArray"
+              uuid: "jSONArray2"
+            methodParameters:
+            - name: "arg0"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 0
+                valueType: "int"
+                fixed: true
+            methodName: "getJSONObject"
+          valueType: "org.json.JSONObject"
+          uuid: "jSONObject3"
+        methodParameters:
+        - name: "arg0"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "distance"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "getJSONObject"
+      valueType: "org.json.JSONObject"
+      uuid: "jSONObject4"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "value"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderRepository"
+      uuid: "orderRepository"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "object"
+      explicitCastNeeded: true
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.Order"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: true
+        propertiesMap:
+          originLatitude:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originLat1"
+            valueType: "java.lang.String"
+            uuid: "originLat"
+          distance:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 1
+            valueType: "java.lang.Integer"
+            uuid: "integer"
+          originLongitude:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originLng1"
+            valueType: "java.lang.String"
+            uuid: "originLng"
+          destinationLatitude:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destLat1"
+            valueType: "java.lang.String"
+            uuid: "destLat"
+          destinationLongitude:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destLng1"
+            valueType: "java.lang.String"
+            uuid: "destLng"
+          status:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "UNASSIGNED"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "order"
+      fixed: true
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "object"
+      explicitCastNeeded: true
+    calledSomeStaticInternalMethod: false
+- method:
+    name: "isValidCoordinate"
+    signature: "isValidCoordinate(java.lang.String[]) : boolean"
+    sourceCodeSignature: "boolean isValidCoordinate(String[] coordinates)"
+    returnType: "boolean"
+    parameters:
+    - name: "coordinates"
+      value:
+        sapientType: "ARRAY"
+        valueType: "java.lang.String[]"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.NumberFormatException"
+    instructionFingerprint: "D4EE6208C1C153A55ED7DCA5892E8890"
+  paths:
+  - pathId: "path1"
+    testPathName: "isValidCoordinateWhenLongitudeNotGreaterThan180"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "2DC8D177F9E11E730A80DC4463A6E7DF"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "88CD6CB54B964CDD7C30A7A695AB9B14"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "coordinates"
+      modelFingerprint: "A4D503664E6DF977F43CF5EFF1DD1907"
+      valueUuid: "coordinates"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "8383DF6F1D02800B0E90FD4143032B37"
+      valueUuid: "expectedResult"
+    uuid: "aeed46d4-60c7-35ac-a6c5-cb313bff16d5"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "0.25 "
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "0.5 "
+            valueType: "java.lang.String"
+            uuid: "string3"
+      valueType: "java.lang.String[]"
+      uuid: "coordinates"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "expectedResult"
+      fixed: true
+    branches:
+    - lineNumber: 64
+      expression: "!(latitude < -90)"
+      range: "(64,20)-(64,36)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(latitude > 90)"
+      range: "(64,41)-(64,56)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude < -180)"
+      range: "(64,61)-(64,79)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude > 180)"
+      range: "(64,84)-(64,101)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+  - pathId: "path2"
+    testPathName: "isValidCoordinateWhenLongitudeGreaterThan180"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "284C598491783ABF96A6188845905D3C"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "88CD6CB54B964CDD7C30A7A695AB9B14"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "coordinates"
+      modelFingerprint: "2E767CFA2EFE1D22E7B8A4D024DA21AB"
+      valueUuid: "coordinates"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "5633A2B0C967879105766C98D64A3959"
+      valueUuid: "expectedResult"
+    uuid: "d04b1a39-9f45-3d66-ae26-99fc0457fb3c"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "90.0 "
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "180.5 "
+            valueType: "java.lang.String"
+            uuid: "string3"
+      valueType: "java.lang.String[]"
+      uuid: "coordinates"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "expectedResult"
+      fixed: true
+    branches:
+    - lineNumber: 64
+      expression: "!(latitude < -90)"
+      range: "(64,20)-(64,36)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(latitude > 90)"
+      range: "(64,41)-(64,56)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude < -180)"
+      range: "(64,61)-(64,79)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude > 180)"
+      range: "(64,84)-(64,101)"
+      evaluatedAs: false
+    calledSomeStaticInternalMethod: false
+  - pathId: "path5"
+    testPathName: "isValidCoordinateWhenCaughtNumberFormatException"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "ACD276B393201C52F9ED2F5591D8CE3D"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "88CD6CB54B964CDD7C30A7A695AB9B14"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "coordinates"
+      modelFingerprint: "A4D503664E6DF977F43CF5EFF1DD1907"
+      valueUuid: "coordinates"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "5633A2B0C967879105766C98D64A3959"
+      valueUuid: "expectedResult"
+    uuid: "11d74e61-938d-3a55-88bf-7df095a6aade"
+    disabled: true
+    failureReason:
+      reason: "DEPENDENCY_TO_THROW_EXCEPTION_NOT_FOUND"
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: true
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "0.25 "
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "0.5 "
+            valueType: "java.lang.String"
+            uuid: "string3"
+      valueType: "java.lang.String[]"
+      uuid: "coordinates"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "expectedResult"
+      fixed: true
+    branches:
+    - lineNumber: 64
+      expression: "!(latitude < -90)"
+      range: "(64,20)-(64,36)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(latitude > 90)"
+      range: "(64,41)-(64,56)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude < -180)"
+      range: "(64,61)-(64,79)"
+      evaluatedAs: true
+    - lineNumber: 64
+      expression: "!(longitude > 180)"
+      range: "(64,84)-(64,101)"
+      evaluatedAs: true
+    - lineNumber: 65
+      expression: "catch-exception (NumberFormatException)"
+      range: "(65,11)-(65,40)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.NumberFormatException"
+- method:
+    name: "takeOrder"
+    signature: "takeOrder(java.lang.Long) : boolean"
+    sourceCodeSignature: "boolean takeOrder(Long orderId)"
+    returnType: "boolean"
+    parameters:
+    - name: "orderId"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.Long"
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "org.springframework.dao.OptimisticLockingFailureException"
+    methodAnnotations:
+    - fullClassName: "jakarta.transaction.Transactional"
+      values: {}
+    instructionFingerprint: "DE518CB78EEC5F1A2F58ECFF01EEC490"
+  paths:
+  - pathId: "path1"
+    testPathName: "takeOrderWhenOrderIsNull"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "10662740F12BE3F1B29DBC2CA64A8E36"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "48960E82C558E4CC553E50FA85798DDE"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "orderId"
+      modelFingerprint: "820973E48585ED245C90D160D5422A6E"
+      valueUuid: "orderId"
+    - type: "FIELD"
+      name: "orderRepository"
+      modelFingerprint: "27FD866D5B4508DE8031C4E04A04F2B6"
+      valueUuid: "orderRepository"
+      methodExercised:
+        expression: "findById(id:orderId):optional"
+        signature: "findById(Long): Optional"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "5633A2B0C967879105766C98D64A3959"
+      valueUuid: "expectedResult"
+    uuid: "7fde0e44-e63a-30fb-ad42-63c54a0fa68b"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "orderId"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderRepository"
+      uuid: "orderRepository"
+    - sapientType: "OPTIONAL"
+      content: !<optional>
+        value:
+          sapientType: "NULL"
+        target: "java.util.Optional"
+      valueType: "java.util.Optional"
+      uuid: "optional"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "orderId"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "expectedResult"
+      fixed: true
+    branches:
+    - lineNumber: 72
+      expression: "order != null"
+      range: "(72,13)-(72,25)"
+      evaluatedAs: false
+    calledSomeStaticInternalMethod: false
+- method:
+    name: "calculate"
+    signature: "calculate(java.lang.String,java.lang.String,java.lang.String,java.lang.String)\
+      \ : java.lang.String"
+    sourceCodeSignature: "String calculate(String originLat, String originLng, String\
+      \ destLat, String destLng)"
+    returnType: "java.lang.String"
+    throwsExceptions:
+    - "java.io.IOException"
+    parameters:
+    - name: "originLat"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "originLng"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "destLat"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    - name: "destLng"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+    instructionFingerprint: "F2A298BBAA345FCFB0595B37BBA6E572"
+  paths:
+  - pathId: "path1"
+    testPathName: "calculateTest"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderRepository) : void"
+    modelFingerprint: "88E6DD0E7DDB0DE96DBB1950C3E4BC2B"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "88CD6CB54B964CDD7C30A7A695AB9B14"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "originLat"
+      modelFingerprint: "E45ED17F08B4713A9EEDEDD3EEF96AFA"
+      valueUuid: "originLat"
+    - type: "INPUT"
+      name: "originLng"
+      modelFingerprint: "FD364E1D0A5988DA0302FD7365A4B6C0"
+      valueUuid: "originLng"
+    - type: "INPUT"
+      name: "destLat"
+      modelFingerprint: "53DCE3DBAD5FDCBDF5AC28F881F02C45"
+      valueUuid: "destLat"
+    - type: "INPUT"
+      name: "destLng"
+      modelFingerprint: "F67EC44E0AC13BBC904DA85DD1EEFCE8"
+      valueUuid: "destLng"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "6C5D214468A8119BA15446B30EDEF588"
+      valueUuid: "request.Builder"
+      methodExercised:
+        expression: "url(url:string6):request.Builder2"
+        signature: "url(String): Request$Builder"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "069DAAE40A348015B95EEF160D89A5F4"
+      valueUuid: "request.Builder2"
+      methodExercised:
+        expression: "build():request"
+        signature: "build(): Request"
+    - type: "LOCAL_VARIABLE"
+      name: "client"
+      modelFingerprint: "5370AC8BAD10F45D33825E43E88D47B7"
+      valueUuid: "okHttpClient"
+      methodExercised:
+        expression: "newCall(request:request):call"
+        signature: "newCall(Request): Call"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "34A00524A0E265294B0768FA906D77FC"
+      valueUuid: "call"
+      methodExercised:
+        expression: "execute():response"
+        signature: "execute(): Response throws java.io.IOException"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "LOCAL_VARIABLE"
+      name: "response"
+      modelFingerprint: "A75DBDD560CF9634A82DCA1060331CAF"
+      valueUuid: "response"
+      methodExercised:
+        expression: "body():responseBody"
+        signature: "body(): ResponseBody"
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "FBB6166D8C4AA5788FACB33651A539FE"
+      valueUuid: "responseBody"
+      methodExercised:
+        expression: "string():string7"
+        signature: "string(): String throws java.io.IOException"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "688938AA016BB6404327ABBF573438DA"
+      valueUuid: "string7"
+    uuid: "7d450efa-bc02-3818-91a6-be6f291707ff"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderService"
+        parameters:
+        - name: "orderRepository"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderRepository"
+            uuid: "orderRepository"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "A"
+      valueType: "java.lang.String"
+      uuid: "originLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "B"
+      valueType: "java.lang.String"
+      uuid: "originLng"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "C"
+      valueType: "java.lang.String"
+      uuid: "destLat"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "D"
+      valueType: "java.lang.String"
+      uuid: "destLng"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "okhttp3.Request$Builder"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: true
+      valueType: "okhttp3.Request$Builder"
+      uuid: "request.Builder"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Request$Builder"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "okhttp3.Request$Builder"
+            parameters: []
+            privateConstructor: false
+            createdByTargetCode: true
+          valueType: "okhttp3.Request$Builder"
+          uuid: "request.Builder"
+          fixed: true
+        methodParameters:
+        - name: "url"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+            valueType: "java.lang.String"
+            uuid: "string6"
+            fixed: true
+        methodName: "url"
+      valueType: "okhttp3.Request$Builder"
+      uuid: "request.Builder2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+      valueType: "java.lang.String"
+      uuid: "string6"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Request$Builder"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "okhttp3.Request$Builder"
+            parameters: []
+            privateConstructor: false
+            createdByTargetCode: true
+          valueType: "okhttp3.Request$Builder"
+          uuid: "request.Builder"
+          fixed: true
+        methodParameters:
+        - name: "url"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+            valueType: "java.lang.String"
+            uuid: "string6"
+            fixed: true
+        methodName: "url"
+      valueType: "okhttp3.Request$Builder"
+      uuid: "request.Builder2"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Request"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Request$Builder"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "okhttp3.Request$Builder"
+                parameters: []
+                privateConstructor: false
+                createdByTargetCode: true
+              valueType: "okhttp3.Request$Builder"
+              uuid: "request.Builder"
+              fixed: true
+            methodParameters:
+            - name: "url"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                valueType: "java.lang.String"
+                uuid: "string6"
+                fixed: true
+            methodName: "url"
+          valueType: "okhttp3.Request$Builder"
+          uuid: "request.Builder2"
+        methodParameters: []
+        methodName: "build"
+      valueType: "okhttp3.Request"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "okhttp3.OkHttpClient"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: true
+      valueType: "okhttp3.OkHttpClient"
+      uuid: "okHttpClient"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Call"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "okhttp3.OkHttpClient"
+            parameters: []
+            privateConstructor: false
+            createdByTargetCode: true
+          valueType: "okhttp3.OkHttpClient"
+          uuid: "okHttpClient"
+          fixed: true
+        methodParameters:
+        - name: "request"
+          value:
+            sapientType: "OBJECT"
+            content: !<method_return_from_value>
+              target: "okhttp3.Request"
+              localVariableValue:
+                sapientType: "OBJECT"
+                content: !<method_return_from_value>
+                  target: "okhttp3.Request$Builder"
+                  localVariableValue:
+                    sapientType: "OBJECT"
+                    content: !<new>
+                      target: "okhttp3.Request$Builder"
+                      parameters: []
+                      privateConstructor: false
+                      createdByTargetCode: true
+                    valueType: "okhttp3.Request$Builder"
+                    uuid: "request.Builder"
+                    fixed: true
+                  methodParameters:
+                  - name: "url"
+                    value:
+                      sapientType: "BASIC"
+                      content: !<regular>
+                        value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                      valueType: "java.lang.String"
+                      uuid: "string6"
+                      fixed: true
+                  methodName: "url"
+                valueType: "okhttp3.Request$Builder"
+                uuid: "request.Builder2"
+              methodParameters: []
+              methodName: "build"
+            valueType: "okhttp3.Request"
+            uuid: "request"
+        methodName: "newCall"
+      valueType: "okhttp3.Call"
+      uuid: "call"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Request"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Request$Builder"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "okhttp3.Request$Builder"
+                parameters: []
+                privateConstructor: false
+                createdByTargetCode: true
+              valueType: "okhttp3.Request$Builder"
+              uuid: "request.Builder"
+              fixed: true
+            methodParameters:
+            - name: "url"
+              value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                valueType: "java.lang.String"
+                uuid: "string6"
+                fixed: true
+            methodName: "url"
+          valueType: "okhttp3.Request$Builder"
+          uuid: "request.Builder2"
+        methodParameters: []
+        methodName: "build"
+      valueType: "okhttp3.Request"
+      uuid: "request"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Call"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<new>
+            target: "okhttp3.OkHttpClient"
+            parameters: []
+            privateConstructor: false
+            createdByTargetCode: true
+          valueType: "okhttp3.OkHttpClient"
+          uuid: "okHttpClient"
+          fixed: true
+        methodParameters:
+        - name: "request"
+          value:
+            sapientType: "OBJECT"
+            content: !<method_return_from_value>
+              target: "okhttp3.Request"
+              localVariableValue:
+                sapientType: "OBJECT"
+                content: !<method_return_from_value>
+                  target: "okhttp3.Request$Builder"
+                  localVariableValue:
+                    sapientType: "OBJECT"
+                    content: !<new>
+                      target: "okhttp3.Request$Builder"
+                      parameters: []
+                      privateConstructor: false
+                      createdByTargetCode: true
+                    valueType: "okhttp3.Request$Builder"
+                    uuid: "request.Builder"
+                    fixed: true
+                  methodParameters:
+                  - name: "url"
+                    value:
+                      sapientType: "BASIC"
+                      content: !<regular>
+                        value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                      valueType: "java.lang.String"
+                      uuid: "string6"
+                      fixed: true
+                  methodName: "url"
+                valueType: "okhttp3.Request$Builder"
+                uuid: "request.Builder2"
+              methodParameters: []
+              methodName: "build"
+            valueType: "okhttp3.Request"
+            uuid: "request"
+        methodName: "newCall"
+      valueType: "okhttp3.Call"
+      uuid: "call"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Response"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Call"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "okhttp3.OkHttpClient"
+                parameters: []
+                privateConstructor: false
+                createdByTargetCode: true
+              valueType: "okhttp3.OkHttpClient"
+              uuid: "okHttpClient"
+              fixed: true
+            methodParameters:
+            - name: "request"
+              value:
+                sapientType: "OBJECT"
+                content: !<method_return_from_value>
+                  target: "okhttp3.Request"
+                  localVariableValue:
+                    sapientType: "OBJECT"
+                    content: !<method_return_from_value>
+                      target: "okhttp3.Request$Builder"
+                      localVariableValue:
+                        sapientType: "OBJECT"
+                        content: !<new>
+                          target: "okhttp3.Request$Builder"
+                          parameters: []
+                          privateConstructor: false
+                          createdByTargetCode: true
+                        valueType: "okhttp3.Request$Builder"
+                        uuid: "request.Builder"
+                        fixed: true
+                      methodParameters:
+                      - name: "url"
+                        value:
+                          sapientType: "BASIC"
+                          content: !<regular>
+                            value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                          valueType: "java.lang.String"
+                          uuid: "string6"
+                          fixed: true
+                      methodName: "url"
+                    valueType: "okhttp3.Request$Builder"
+                    uuid: "request.Builder2"
+                  methodParameters: []
+                  methodName: "build"
+                valueType: "okhttp3.Request"
+                uuid: "request"
+            methodName: "newCall"
+          valueType: "okhttp3.Call"
+          uuid: "call"
+        methodParameters: []
+        methodName: "execute"
+      valueType: "okhttp3.Response"
+      uuid: "response"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.Response"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Call"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<new>
+                target: "okhttp3.OkHttpClient"
+                parameters: []
+                privateConstructor: false
+                createdByTargetCode: true
+              valueType: "okhttp3.OkHttpClient"
+              uuid: "okHttpClient"
+              fixed: true
+            methodParameters:
+            - name: "request"
+              value:
+                sapientType: "OBJECT"
+                content: !<method_return_from_value>
+                  target: "okhttp3.Request"
+                  localVariableValue:
+                    sapientType: "OBJECT"
+                    content: !<method_return_from_value>
+                      target: "okhttp3.Request$Builder"
+                      localVariableValue:
+                        sapientType: "OBJECT"
+                        content: !<new>
+                          target: "okhttp3.Request$Builder"
+                          parameters: []
+                          privateConstructor: false
+                          createdByTargetCode: true
+                        valueType: "okhttp3.Request$Builder"
+                        uuid: "request.Builder"
+                        fixed: true
+                      methodParameters:
+                      - name: "url"
+                        value:
+                          sapientType: "BASIC"
+                          content: !<regular>
+                            value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                          valueType: "java.lang.String"
+                          uuid: "string6"
+                          fixed: true
+                      methodName: "url"
+                    valueType: "okhttp3.Request$Builder"
+                    uuid: "request.Builder2"
+                  methodParameters: []
+                  methodName: "build"
+                valueType: "okhttp3.Request"
+                uuid: "request"
+            methodName: "newCall"
+          valueType: "okhttp3.Call"
+          uuid: "call"
+        methodParameters: []
+        methodName: "execute"
+      valueType: "okhttp3.Response"
+      uuid: "response"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.ResponseBody"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Response"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "okhttp3.Call"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<new>
+                    target: "okhttp3.OkHttpClient"
+                    parameters: []
+                    privateConstructor: false
+                    createdByTargetCode: true
+                  valueType: "okhttp3.OkHttpClient"
+                  uuid: "okHttpClient"
+                  fixed: true
+                methodParameters:
+                - name: "request"
+                  value:
+                    sapientType: "OBJECT"
+                    content: !<method_return_from_value>
+                      target: "okhttp3.Request"
+                      localVariableValue:
+                        sapientType: "OBJECT"
+                        content: !<method_return_from_value>
+                          target: "okhttp3.Request$Builder"
+                          localVariableValue:
+                            sapientType: "OBJECT"
+                            content: !<new>
+                              target: "okhttp3.Request$Builder"
+                              parameters: []
+                              privateConstructor: false
+                              createdByTargetCode: true
+                            valueType: "okhttp3.Request$Builder"
+                            uuid: "request.Builder"
+                            fixed: true
+                          methodParameters:
+                          - name: "url"
+                            value:
+                              sapientType: "BASIC"
+                              content: !<regular>
+                                value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                              valueType: "java.lang.String"
+                              uuid: "string6"
+                              fixed: true
+                          methodName: "url"
+                        valueType: "okhttp3.Request$Builder"
+                        uuid: "request.Builder2"
+                      methodParameters: []
+                      methodName: "build"
+                    valueType: "okhttp3.Request"
+                    uuid: "request"
+                methodName: "newCall"
+              valueType: "okhttp3.Call"
+              uuid: "call"
+            methodParameters: []
+            methodName: "execute"
+          valueType: "okhttp3.Response"
+          uuid: "response"
+        methodParameters: []
+        methodName: "body"
+      valueType: "okhttp3.ResponseBody"
+      uuid: "responseBody"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "okhttp3.ResponseBody"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<method_return_from_value>
+            target: "okhttp3.Response"
+            localVariableValue:
+              sapientType: "OBJECT"
+              content: !<method_return_from_value>
+                target: "okhttp3.Call"
+                localVariableValue:
+                  sapientType: "OBJECT"
+                  content: !<new>
+                    target: "okhttp3.OkHttpClient"
+                    parameters: []
+                    privateConstructor: false
+                    createdByTargetCode: true
+                  valueType: "okhttp3.OkHttpClient"
+                  uuid: "okHttpClient"
+                  fixed: true
+                methodParameters:
+                - name: "request"
+                  value:
+                    sapientType: "OBJECT"
+                    content: !<method_return_from_value>
+                      target: "okhttp3.Request"
+                      localVariableValue:
+                        sapientType: "OBJECT"
+                        content: !<method_return_from_value>
+                          target: "okhttp3.Request$Builder"
+                          localVariableValue:
+                            sapientType: "OBJECT"
+                            content: !<new>
+                              target: "okhttp3.Request$Builder"
+                              parameters: []
+                              privateConstructor: false
+                              createdByTargetCode: true
+                            valueType: "okhttp3.Request$Builder"
+                            uuid: "request.Builder"
+                            fixed: true
+                          methodParameters:
+                          - name: "url"
+                            value:
+                              sapientType: "BASIC"
+                              content: !<regular>
+                                value: "https://maps.googleapis.com/maps/api/distancematrix/json?origins=A,B&destinations=C,D&units=metric&key=null"
+                              valueType: "java.lang.String"
+                              uuid: "string6"
+                              fixed: true
+                          methodName: "url"
+                        valueType: "okhttp3.Request$Builder"
+                        uuid: "request.Builder2"
+                      methodParameters: []
+                      methodName: "build"
+                    valueType: "okhttp3.Request"
+                    uuid: "request"
+                methodName: "newCall"
+              valueType: "okhttp3.Call"
+              uuid: "call"
+            methodParameters: []
+            methodName: "execute"
+          valueType: "okhttp3.Response"
+          uuid: "response"
+        methodParameters: []
+        methodName: "body"
+      valueType: "okhttp3.ResponseBody"
+      uuid: "responseBody"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\n   \\\"destination_addresses\\\" : [],\\n   \\\"error_message\\\
+          \" : \\\"The provided API key is invalid. \\\",\\n   \\\"origin_addresses\\\
+          \" : [],\\n   \\\"rows\\\" : [],\\n   \\\"status\\\" : \\\"REQUEST_DENIED\\\
+          \"\\n}"
+      valueType: "java.lang.String"
+      uuid: "string7"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\n   \\\"destination_addresses\\\" : [],\\n   \\\"error_message\\\
+          \" : \\\"The provided API key is invalid. \\\",\\n   \\\"origin_addresses\\\
+          \" : [],\\n   \\\"rows\\\" : [],\\n   \\\"status\\\" : \\\"REQUEST_DENIED\\\
+          \"\\n}"
+      valueType: "java.lang.String"
+      uuid: "string7"
+    calledSomeStaticInternalMethod: false

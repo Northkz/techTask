@@ -1,0 +1,3177 @@
+---
+modelFingerprint: "AA8080734E480A39AC1592787D3BEA1E"
+targetClass:
+  fullClassName: "com.nursultan.order.Order.OrderController"
+  annotations:
+  - fullClassName: "org.springframework.web.bind.annotation.RestController"
+    values: {}
+  - fullClassName: "org.springframework.web.bind.annotation.RequestMapping"
+    values:
+      path: "[orders]"
+methods:
+- method:
+    name: "listOrders"
+    signature: "listOrders(java.lang.String,java.lang.String) : org.springframework.http.ResponseEntity<?>"
+    sourceCodeSignature: "ResponseEntity<?> listOrders(@RequestParam String page,\
+      \ @RequestParam String limit)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "?"
+    parameters:
+    - name: "page"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+      parameterAnnotations:
+      - fullClassName: "org.springframework.web.bind.annotation.RequestParam"
+        values: {}
+    - name: "limit"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.String"
+      parameterAnnotations:
+      - fullClassName: "org.springframework.web.bind.annotation.RequestParam"
+        values: {}
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.NumberFormatException"
+    methodAnnotations:
+    - fullClassName: "org.springframework.web.bind.annotation.GetMapping"
+      values: {}
+    instructionFingerprint: "86BF033D5C482505C6BFF57C3A366E7D"
+  paths:
+  - pathId: "path5"
+    testPathName: "listOrdersWhenCaughtNumberFormatException"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "094225BCE3BFEA7D1FC2D2CE73F072E3"
+    problemWasSolvedByProver: false
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "E54B43169D6267C785ACFB89B4FA33D9"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "page"
+      modelFingerprint: "9604D4E55B56291FB158411AC9C0EC6D"
+      valueUuid: "page"
+    - type: "INPUT"
+      name: "limit"
+      modelFingerprint: "50E901AAEAA2C4EECD91808C0526E175"
+      valueUuid: "limit"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "9E93695F6EB8CBBEDD3D8A98ED3863C1"
+      valueUuid: "uniqueUuid1"
+      methodExercised:
+        expression: "badRequest():responseEntity.BodyBuilder"
+        signature: "badRequest(): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "12CABF16CD1AA7F5FCA7FD9F9BD76F48"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid2):responseEntity"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "1C141EAFED4C76201441CCB9ABD94FD6"
+      valueUuid: "responseEntity"
+    uuid: "01df68c1-655a-3d62-bc83-16f829f7420a"
+    disabled: true
+    failureReason:
+      reason: "DEPENDENCY_TO_THROW_EXCEPTION_NOT_FOUND"
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: true
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "0"
+      valueType: "java.lang.String"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "0"
+      valueType: "java.lang.String"
+      uuid: "limit"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid1"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Page and limit must be valid integers\\\"\
+                }"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"error\\\":\\\"Page and limit must be valid integers\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid2"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Page and limit must be valid integers\\\"\
+                }"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 33
+      expression: "catch-exception (NumberFormatException)"
+      range: "(33,11)-(33,40)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 1
+      catchExceptions:
+      - "java.lang.NumberFormatException"
+  - pathId: "path1"
+    testPathName: "listOrdersWhenLimitNumLessThan1"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "373260D1067C3680233E5A28A228C3DB"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "E54B43169D6267C785ACFB89B4FA33D9"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "page"
+      modelFingerprint: "2D5C20CB1CA72D80BB4CC09FB0BEB328"
+      valueUuid: "page"
+    - type: "INPUT"
+      name: "limit"
+      modelFingerprint: "50E901AAEAA2C4EECD91808C0526E175"
+      valueUuid: "limit"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "9E93695F6EB8CBBEDD3D8A98ED3863C1"
+      valueUuid: "uniqueUuid3"
+      methodExercised:
+        expression: "badRequest():responseEntity.BodyBuilder"
+        signature: "badRequest(): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "DD7110705C5BB5DA39CCDC6988800161"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid4):responseEntity"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "EB4E64EBFBB9658AD5A6F69EA10F98BD"
+      valueUuid: "responseEntity"
+    uuid: "1d10a47b-18a6-3ef6-8454-a1dd08260d07"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "2"
+      valueType: "java.lang.String"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "0"
+      valueType: "java.lang.String"
+      uuid: "limit"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid3"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Invalid page or limit values\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"error\\\":\\\"Invalid page or limit values\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid4"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Invalid page or limit values\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 37
+      expression: "pageNum < 1"
+      range: "(37,13)-(37,23)"
+      evaluatedAs: false
+    - lineNumber: 37
+      expression: "limitNum < 1"
+      range: "(37,28)-(37,39)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+  - pathId: "path2"
+    testPathName: "listOrdersWhenOrdersIsEmpty"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "806899B2FA4869F01BF9F0DCD03AB435"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "page"
+      modelFingerprint: "2D5C20CB1CA72D80BB4CC09FB0BEB328"
+      valueUuid: "page"
+    - type: "INPUT"
+      name: "limit"
+      modelFingerprint: "9B12231CCA51411C434F8FB76891B0EB"
+      valueUuid: "limit"
+    - type: "STATIC"
+      name: "PageRequest"
+      modelFingerprint: "670CF5EB3FEC9471CE0D5E3766C22463"
+      valueUuid: "uniqueUuid5"
+      methodExercised:
+        expression: "of(pageNumber:int3,pageSize:int2):pageRequest"
+        signature: "of(int,int): PageRequest"
+        staticAccess: true
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "7B8E5360410784F4B2531B6AF60CF87C"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "getOrders(pageable:pageRequest):page2"
+        signature: "getOrders(PageRequest): Page"
+    - type: "LOCAL_VARIABLE"
+      name: "orders"
+      modelFingerprint: "16856AEFAF0ED79506C3B351A2F4B54D"
+      valueUuid: "page2"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+        signature: "isEmpty(): boolean"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "3FBE028B59FCD6B5A6C4BFF160A8935D"
+      valueUuid: "uniqueUuid7"
+      methodExercised:
+        expression: "ok(body:uniqueUuid6):responseEntity"
+        signature: "ok(String): ResponseEntity"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "65E8326AB44535BE95BB29C6368F68DA"
+      valueUuid: "responseEntity"
+    uuid: "5d4df680-5127-3dfd-88d2-b7fd9143c9ab"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "2"
+      valueType: "java.lang.String"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "1"
+      valueType: "java.lang.String"
+      uuid: "limit"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "uniqueUuid5"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "pageRequest"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int2"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "pageRequest"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid7"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "[]"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "[]"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid6"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "[]"
+            valueType: "java.lang.String"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.lang.String"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 37
+      expression: "pageNum < 1"
+      range: "(37,13)-(37,23)"
+      evaluatedAs: false
+    - lineNumber: 37
+      expression: "limitNum < 1"
+      range: "(37,28)-(37,39)"
+      evaluatedAs: false
+    - lineNumber: 44
+      expression: "orders.isEmpty()"
+      range: "(44,13)-(44,28)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+  - pathId: "path3"
+    testPathName: "listOrdersWhenOrdersNotIsEmpty"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "1FBE209EAD11C2B171AD0758BE677959"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "page"
+      modelFingerprint: "2D5C20CB1CA72D80BB4CC09FB0BEB328"
+      valueUuid: "page"
+    - type: "INPUT"
+      name: "limit"
+      modelFingerprint: "9B12231CCA51411C434F8FB76891B0EB"
+      valueUuid: "limit"
+    - type: "STATIC"
+      name: "PageRequest"
+      modelFingerprint: "670CF5EB3FEC9471CE0D5E3766C22463"
+      valueUuid: "uniqueUuid8"
+      methodExercised:
+        expression: "of(pageNumber:int3,pageSize:int2):pageRequest"
+        signature: "of(int,int): PageRequest"
+        staticAccess: true
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "7B8E5360410784F4B2531B6AF60CF87C"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "getOrders(pageable:pageRequest):page2"
+        signature: "getOrders(PageRequest): Page"
+    - type: "LOCAL_VARIABLE"
+      name: "orders"
+      modelFingerprint: "830B1B014EF201629E1ACC0C49BDE2C3"
+      valueUuid: "page2"
+      methodExercised:
+        expression: "isEmpty():boolean1"
+        signature: "isEmpty(): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orders"
+      modelFingerprint: "60DEE862E534E1FE00395AB66AF46B5B"
+      valueUuid: "page2"
+      methodExercised:
+        expression: "getContent():list"
+        signature: "getContent(): List"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "365B67A8FDE3F13980AFBB1C5102BB01"
+      valueUuid: "uniqueUuid9"
+      methodExercised:
+        expression: "ok(body:list):responseEntity"
+        signature: "ok(List): ResponseEntity"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "47CF9DC45353E42E7EB350310F58CC8A"
+      valueUuid: "responseEntity"
+    uuid: "a48343a1-81dd-3489-b888-f3f9201f548b"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "2"
+      valueType: "java.lang.String"
+      uuid: "page"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "1"
+      valueType: "java.lang.String"
+      uuid: "limit"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "uniqueUuid8"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "pageRequest"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 1
+      valueType: "int"
+      uuid: "int2"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page2"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.PageRequest"
+      uuid: "pageRequest"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.data.domain.Page"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "page2"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid9"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.List"
+      uuid: "responseEntity"
+    - sapientType: "COLLECTION"
+      content: !<collection>
+        parameters: []
+        values: []
+      valueType: "java.util.List"
+      uuid: "list"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "java.util.List"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 37
+      expression: "pageNum < 1"
+      range: "(37,13)-(37,23)"
+      evaluatedAs: false
+    - lineNumber: 37
+      expression: "limitNum < 1"
+      range: "(37,28)-(37,39)"
+      evaluatedAs: false
+    - lineNumber: 44
+      expression: "orders.isEmpty()"
+      range: "(44,13)-(44,28)"
+      evaluatedAs: false
+    calledSomeStaticInternalMethod: false
+- method:
+    name: "takeOrder"
+    signature: "takeOrder(java.lang.Long) : org.springframework.http.ResponseEntity<?>"
+    sourceCodeSignature: "ResponseEntity<?> takeOrder(@PathVariable Long id)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "?"
+    parameters:
+    - name: "id"
+      value:
+        sapientType: "BASIC"
+        valueType: "java.lang.Long"
+      parameterAnnotations:
+      - fullClassName: "org.springframework.web.bind.annotation.PathVariable"
+        values: {}
+    methodAnnotations:
+    - fullClassName: "org.springframework.web.bind.annotation.PatchMapping"
+      values:
+        value: "[/{id}]"
+    instructionFingerprint: "A21B1DA1A661371448C8DE2EFB11168B"
+  paths:
+  - pathId: "path1"
+    testPathName: "takeOrderWhenSuccess"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "DEA60D1758A2E114BA78E30BB93DB441"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "36E0CCA6470AC60E45CA54AE35F6E4AE"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "takeOrder(orderId:id):boolean1"
+        signature: "takeOrder(Long): boolean"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "CB3D2F1B7BDFF0DDA1D46C1C7152B1E1"
+      valueUuid: "uniqueUuid10"
+      methodExercised:
+        expression: "ok():responseEntity.BodyBuilder"
+        signature: "ok(): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "F28DCF4D1E63B7AF9413920AEBEA05CB"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid11):responseEntity"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "9193FC408E2BD82F57DD89022A5D418F"
+      valueUuid: "responseEntity"
+    uuid: "1e6638be-35a4-34f8-a428-72ad6e77c0cb"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid10"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "ok"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "ok"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"status\\\":\\\"SUCCESS\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"status\\\":\\\"SUCCESS\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid11"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "ok"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"status\\\":\\\"SUCCESS\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 54
+      expression: "success"
+      range: "(54,13)-(54,19)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+  - pathId: "path2"
+    testPathName: "takeOrderWhenNotSuccess"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "38CAD18C5451B0E6D07A4AE7CE394CB7"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "id"
+      modelFingerprint: "C66675FDCB8DECE3D3C375C96E389AB2"
+      valueUuid: "id"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "64A9999FD3FAE25FCCD305107BDADE6B"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "takeOrder(orderId:id):boolean1"
+        signature: "takeOrder(Long): boolean"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "C658B0653F5B4545BADBE3D41C41E3A6"
+      valueUuid: "uniqueUuid13"
+      methodExercised:
+        expression: "status(status:uniqueUuid12):responseEntity.BodyBuilder"
+        signature: "status(int): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "4371AF959A90D39FEA9F01F747C1C96F"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid14):responseEntity"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "288C9A05D91A64A03D84005AD343B594"
+      valueUuid: "responseEntity"
+    uuid: "8095574f-4ed3-39ff-9db7-2a09d3538935"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 0
+      valueType: "java.lang.Long"
+      uuid: "id"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid13"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 400
+            valueType: "int"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: 400
+      valueType: "int"
+      uuid: "uniqueUuid12"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "status"
+        methodParameters:
+        - value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: 400
+            valueType: "int"
+            fixed: true
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 400
+                valueType: "int"
+                fixed: true
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Order already taken or does not exist\\\"\
+                }"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"error\\\":\\\"Order already taken or does not exist\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid14"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "status"
+            methodParameters:
+            - value:
+                sapientType: "BASIC"
+                content: !<regular>
+                  value: 400
+                valueType: "int"
+                fixed: true
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Order already taken or does not exist\\\"\
+                }"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 54
+      expression: "success"
+      range: "(54,13)-(54,19)"
+      evaluatedAs: false
+    calledSomeStaticInternalMethod: false
+- method:
+    name: "placeOrder"
+    signature: "placeOrder(com.nursultan.order.Order.OrderRequestDTO) : org.springframework.http.ResponseEntity<?>"
+    sourceCodeSignature: "ResponseEntity<?> placeOrder(@RequestBody OrderRequestDTO\
+      \ orderRequest)"
+    returnType: "org.springframework.http.ResponseEntity"
+    genericReturnType: "?"
+    parameters:
+    - name: "orderRequest"
+      value:
+        sapientType: "UNKNOWN"
+        valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      parameterAnnotations:
+      - fullClassName: "org.springframework.web.bind.annotation.RequestBody"
+        values: {}
+    tryCatchBlocks:
+    - idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.Exception"
+    methodAnnotations:
+    - fullClassName: "org.springframework.web.bind.annotation.PostMapping"
+      values: {}
+    instructionFingerprint: "E84AB14A9EEE2130CF49FC29B4045E19"
+  paths:
+  - pathId: "path1"
+    testPathName: "placeOrderWhenOrderServiceNotIsValidCoordinateOrderRequestGetDestination"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "291AB7632F09402CAEBD312468331D1A"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "orderRequest"
+      modelFingerprint: "937D0997CEAF18FA8C986F5F58193F77"
+      valueUuid: "orderRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "39E4608D9ED2CA72693DF7EC93F6AFFA"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:origin):boolean1"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "502E7D0C6C7C235C316E0628808BBD30"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:destination):boolean2"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "9E93695F6EB8CBBEDD3D8A98ED3863C1"
+      valueUuid: "uniqueUuid15"
+      methodExercised:
+        expression: "badRequest():responseEntity.BodyBuilder"
+        signature: "badRequest(): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "3B8B6E37B60192972EFB9089CEAF088B"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid16):responseEntity"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "11953093739BB244606803E8027EFB9F"
+      valueUuid: "responseEntity"
+    uuid: "19d16d99-06b5-32a7-8a54-debe1492bce7"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem1"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem1"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem1"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem1"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem1"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem1"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem1"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem1"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem1"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem1"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem1"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "originItem1"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "originItem1"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem0"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "destinationItem1"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem1"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: false
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem0"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "destinationItem1"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid15"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "badRequest"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Invalid coordinate format\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"error\\\":\\\"Invalid coordinate format\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid16"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "badRequest"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Invalid coordinate format\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 64
+      expression: "orderRequest.getOrigin().length != 2"
+      range: "(64,13)-(64,48)"
+      evaluatedAs: false
+    - lineNumber: 64
+      expression: "orderRequest.getDestination().length != 2"
+      range: "(64,53)-(64,93)"
+      evaluatedAs: false
+    - lineNumber: 65
+      expression: "!orderService.isValidCoordinate(orderRequest.getOrigin())"
+      range: "(65,20)-(65,76)"
+      evaluatedAs: false
+    - lineNumber: 66
+      expression: "!orderService.isValidCoordinate(orderRequest.getDestination())"
+      range: "(66,20)-(66,81)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+  - pathId: "path2"
+    testPathName: "placeOrderWhenOrderServiceIsValidCoordinateOrderRequestGetDestination"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "E3B83E8BA4CC0D112AF58FBCA1478404"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "A45F15FCE4861DC410AB0140EF881E2B"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "orderRequest"
+      modelFingerprint: "937D0997CEAF18FA8C986F5F58193F77"
+      valueUuid: "orderRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "39E4608D9ED2CA72693DF7EC93F6AFFA"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:origin):boolean1"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "39E4608D9ED2CA72693DF7EC93F6AFFA"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:destination):boolean2"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "60F717BC1F543D24BB716362AA0AC0BB"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "createOrder(originLat:string,originLng:string2,destLat:string3,destLng:string4):order"
+        signature: "createOrder(String,String,String,String): Order throws java.io.IOException"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "75EFC1F459939D90F3286D55AB7A46C5"
+      valueUuid: "uniqueUuid17"
+      methodExercised:
+        expression: "ok(body:order):responseEntity"
+        signature: "ok(Order): ResponseEntity"
+        staticAccess: true
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "C02018525823850760D785B876D4DB8F"
+      valueUuid: "responseEntity"
+    uuid: "3238eec1-b872-3011-b6a1-fa3070634447"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "order"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originItem1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originItem1"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destinationItem1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destinationItem1"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid17"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "responseEntity"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "order"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      genericValueType: "com.nursultan.order.Order.Order"
+      uuid: "responseEntity"
+    branches:
+    - lineNumber: 64
+      expression: "orderRequest.getOrigin().length != 2"
+      range: "(64,13)-(64,48)"
+      evaluatedAs: false
+    - lineNumber: 64
+      expression: "orderRequest.getDestination().length != 2"
+      range: "(64,53)-(64,93)"
+      evaluatedAs: false
+    - lineNumber: 65
+      expression: "!orderService.isValidCoordinate(orderRequest.getOrigin())"
+      range: "(65,20)-(65,76)"
+      evaluatedAs: false
+    - lineNumber: 66
+      expression: "!orderService.isValidCoordinate(orderRequest.getDestination())"
+      range: "(66,20)-(66,81)"
+      evaluatedAs: false
+    calledSomeStaticInternalMethod: false
+  - pathId: "path6"
+    testPathName: "placeOrderWhenCaughtException"
+    constructorSignature: "<init>(com.nursultan.order.Order.OrderService) : void"
+    modelFingerprint: "4CFC30F6CB7D0EAB6015A14A85AF5E28"
+    problemWasSolvedByProver: true
+    inputParameters:
+    - type: "CONSTRUCTOR"
+      modelFingerprint: "23E706A4A95D27F229F454EE4084CCBA"
+      valueUuid: "target"
+    - type: "INPUT"
+      name: "orderRequest"
+      modelFingerprint: "937D0997CEAF18FA8C986F5F58193F77"
+      valueUuid: "orderRequest"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "E2FAC1E9DE7013FAB9A3C39C5E3F13F0"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:origin):boolean1"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "E2FAC1E9DE7013FAB9A3C39C5E3F13F0"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "isValidCoordinate(coordinates:destination):boolean2"
+        signature: "isValidCoordinate(String[]): boolean"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "E801EBC057B106575D40330C5ED7CA53"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getOrigin():origin"
+        signature: "getOrigin(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "LOCAL_VARIABLE"
+      name: "orderRequest"
+      modelFingerprint: "2FE820B260F24FCEB5C7810C428EEB8E"
+      valueUuid: "orderRequest"
+      methodExercised:
+        expression: "getDestination():destination"
+        signature: "getDestination(): String[]"
+    - type: "FIELD"
+      name: "orderService"
+      modelFingerprint: "E5C66E3DED14873BD6F0A6859281B5C0"
+      valueUuid: "orderService"
+      methodExercised:
+        expression: "createOrder(originLat:string,originLng:string2,destLat:string3,destLng:string4):order"
+        signature: "createOrder(String,String,String,String): Order throws java.io.IOException"
+        throwsExceptions:
+        - "java.io.IOException"
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "95F00485210100E498D4DC3E7D9C4E65"
+      valueUuid: "uniqueUuid1"
+      methodExercised:
+        expression: "ok(body:order):responseEntity"
+        signature: "ok(Order): ResponseEntity"
+        staticAccess: true
+    - type: "STATIC"
+      name: "ResponseEntity"
+      modelFingerprint: "613654EAC5FF828BAE4DFB11FDE0777A"
+      valueUuid: "uniqueUuid2"
+      methodExercised:
+        expression: "internalServerError():responseEntity.BodyBuilder"
+        signature: "internalServerError(): ResponseEntity$BodyBuilder"
+        staticAccess: true
+    - type: "LOCAL_VARIABLE"
+      modelFingerprint: "2BA834DDAA0184FA10D10B5E1AD70960"
+      valueUuid: "responseEntity.BodyBuilder"
+      methodExercised:
+        expression: "body(body:uniqueUuid3):responseEntity2"
+        signature: "body(String): ResponseEntity"
+    - type: "RESULT"
+      name: "result"
+      modelFingerprint: "74F221F75DD1128EA865FBAB27F62CDC"
+      valueUuid: "responseEntity2"
+    uuid: "eee2a261-1c67-3f71-85db-e876af5fffd2"
+    disabled: false
+    disabledStatusUpdatedByUser: false
+    disabledStatusUpdatedBySystem: false
+    allValues:
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderController"
+        parameters:
+        - name: "orderService"
+          value:
+            sapientType: "MOCK"
+            valueType: "com.nursultan.order.Order.OrderService"
+            uuid: "orderService"
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "com.nursultan.order.Order.OrderController"
+      uuid: "target"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean1"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: true
+      valueType: "boolean"
+      uuid: "boolean2"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "originItem1"
+            valueType: "java.lang.String"
+            uuid: "string2"
+      valueType: "java.lang.String[]"
+      uuid: "origin"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "OBJECT"
+      content: !<new>
+        target: "com.nursultan.order.Order.OrderRequestDTO"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+        propertiesMap:
+          origin:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "originItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string2"
+            valueType: "java.lang.String[]"
+            uuid: "origin"
+          destination:
+            sapientType: "ARRAY"
+            content: !<array>
+              values:
+                0:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string3"
+                1:
+                  sapientType: "BASIC"
+                  content: !<regular>
+                    value: "destinationItem1"
+                  valueType: "java.lang.String"
+                  uuid: "string4"
+            valueType: "java.lang.String[]"
+            uuid: "destination"
+      valueType: "com.nursultan.order.Order.OrderRequestDTO"
+      uuid: "orderRequest"
+    - sapientType: "ARRAY"
+      content: !<array>
+        values:
+          0:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string3"
+          1:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "destinationItem1"
+            valueType: "java.lang.String"
+            uuid: "string4"
+      valueType: "java.lang.String[]"
+      uuid: "destination"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.OrderService"
+      uuid: "orderService"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "order"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originItem1"
+      valueType: "java.lang.String"
+      uuid: "string"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "originItem1"
+      valueType: "java.lang.String"
+      uuid: "string2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destinationItem1"
+      valueType: "java.lang.String"
+      uuid: "string3"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "destinationItem1"
+      valueType: "java.lang.String"
+      uuid: "string4"
+    - sapientType: "MOCK"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid1"
+    - sapientType: "EXCEPTION"
+      content: !<new>
+        target: "java.lang.RuntimeException"
+        parameters: []
+        privateConstructor: false
+        createdByTargetCode: false
+      valueType: "java.lang.RuntimeException"
+      uuid: "responseEntity"
+    - sapientType: "MOCK"
+      valueType: "com.nursultan.order.Order.Order"
+      uuid: "order"
+    - sapientType: "REAL"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "uniqueUuid2"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "internalServerError"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<static_method_return>
+        target: "org.springframework.http.ResponseEntity"
+        method: "internalServerError"
+        methodParameters: []
+      valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+      uuid: "responseEntity.BodyBuilder"
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "internalServerError"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Error processing your request\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity2"
+    - sapientType: "BASIC"
+      content: !<regular>
+        value: "{\\\"error\\\":\\\"Error processing your request\\\"}"
+      valueType: "java.lang.String"
+      uuid: "uniqueUuid3"
+      fixed: true
+    - sapientType: "OBJECT"
+      content: !<method_return_from_value>
+        target: "org.springframework.http.ResponseEntity"
+        localVariableValue:
+          sapientType: "OBJECT"
+          content: !<static_method_return>
+            target: "org.springframework.http.ResponseEntity"
+            method: "internalServerError"
+            methodParameters: []
+          valueType: "org.springframework.http.ResponseEntity$BodyBuilder"
+          uuid: "responseEntity.BodyBuilder"
+        methodParameters:
+        - name: "body"
+          value:
+            sapientType: "BASIC"
+            content: !<regular>
+              value: "{\\\"error\\\":\\\"Error processing your request\\\"}"
+            valueType: "java.lang.String"
+            fixed: true
+        methodName: "body"
+      valueType: "org.springframework.http.ResponseEntity"
+      uuid: "responseEntity2"
+    branches:
+    - lineNumber: 64
+      expression: "orderRequest.getOrigin().length != 2"
+      range: "(64,13)-(64,48)"
+      evaluatedAs: false
+    - lineNumber: 64
+      expression: "orderRequest.getDestination().length != 2"
+      range: "(64,53)-(64,93)"
+      evaluatedAs: false
+    - lineNumber: 65
+      expression: "!orderService.isValidCoordinate(orderRequest.getOrigin())"
+      range: "(65,20)-(65,76)"
+      evaluatedAs: false
+    - lineNumber: 66
+      expression: "!orderService.isValidCoordinate(orderRequest.getDestination())"
+      range: "(66,20)-(66,81)"
+      evaluatedAs: false
+    - lineNumber: 74
+      expression: "catch-exception (Exception)"
+      range: "(74,11)-(74,28)"
+      evaluatedAs: true
+    calledSomeStaticInternalMethod: false
+    catchBlockExercised:
+      idExternalInstruction: 0
+      id: 2
+      catchExceptions:
+      - "java.lang.Exception"
